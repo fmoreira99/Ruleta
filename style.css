@@ -1,0 +1,91 @@
+:root {
+  --bg: #0b0f17;
+  --card: #121826;
+  --brand: #00ffa0;
+  --brand-2: #00b8ff;
+}
+
+body {
+  background: var(--bg);
+  color: #e8f0ff;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid #1f2a3a;
+}
+
+#wheel-wrap {
+  position: relative;
+  width: min(420px, 90vw);
+  margin: auto;
+}
+
+#wheel {
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.5));
+}
+
+#pointer {
+  position: absolute;
+  inset: auto 0 100% 0;
+  margin: auto;
+  width: 0;
+  height: 0;
+  border-left: 16px solid transparent;
+  border-right: 16px solid transparent;
+  border-top: 26px solid var(--brand);
+  transform: translateY(12px);
+}
+
+.btn-brand {
+  background: linear-gradient(90deg, var(--brand), var(--brand-2));
+  color: #031a15;
+  font-weight: 700;
+  border: 0;
+}
+
+.list-wins {
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+#cooldownTimer {
+  min-height: 1.25rem;
+}
+
+#ads-buttons .btn {
+  text-align: left;
+}
+
+#ads-buttons .btn[disabled] {
+  opacity: 0.6;
+}
+
+.preview-square {
+  width: 100%;
+  max-width: 220px;
+  aspect-ratio: 1;
+  border: 2px dashed rgba(255, 255, 255, 0.25);
+  background-color: rgba(255, 255, 255, 0.05);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  color: rgba(232, 240, 255, 0.7);
+  margin: 0 auto;
+  transition: border-color 0.2s ease, background 0.2s ease, color 0.2s ease;
+}
+
+.preview-square.has-image {
+  border-style: solid;
+  border-color: rgba(0, 255, 160, 0.6);
+  background-color: rgba(0, 0, 0, 0.35);
+  color: transparent;
+}
