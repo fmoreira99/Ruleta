@@ -1,5 +1,5 @@
 {
-  "attempts": { "free": 1000, "perAd": 1, "max": 3, "cooldownHours": 3 },
+  "attempts": { "free": 1000, "perAd": 1, "max": 3, "cooldownHours": 0.25 },
   "ads": [
     { "label": "Publicidad 1", "url": "https://www.effectivegatecpm.com/bu6ibhkg?key=b2d6c3b416d103d22df6db5181f3132a" },
     { "label": "Publicidad 2", "url": "https://www.effectivegatecpm.com/d1rfhq04x?key=4f4f9fdf2187e0f0c444b4be9a4a33d0" },
@@ -12,7 +12,7 @@
     { "label": "Publicidad 9", "url": "https://www.effectivegatecpm.com/wqgi71hemu?key=34a9f666596b818861f49f84becb685e" },
     { "label": "Publicidad 10", "url": "https://www.effectivegatecpm.com/rcbsrwxv58?key=4252999d93bfecfc4aa4dcf8f91fc03b" }
   ],
-  "adsBonus": { "limitPerHour": 10, "windowMinutes": 60 },
+  "adsBonus": { "limitPerHour": 10, "windowMinutes": 15 },
   "wheelImage": "https://i.imgur.com/mAOasPP.png",
   "rules": {
     "characterAdsRequired": 1000,

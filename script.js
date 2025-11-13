@@ -23,6 +23,7 @@ let firstSpinHintShown = false;
 let firstSpinHintTimeout = null;
 let musicEnabled = true;
 let firstInteractionListenerBound = false;
+let userReminderOpen = false;
 const SLICE_COLORS = [
   "#ff6b6b",
   "#feca57",
@@ -93,6 +94,9 @@ async function init() {
   startRenderLoop();
   startAdsWindowWatcher();
   refreshUI();
+  if (!hasSavedUser()) {
+    showUserReminder(true);
+  }
 }
 
 function loadState() {
@@ -129,9 +133,18 @@ function maybeResetAdsWindow(force = false) {
   if (force || !adsWindowStart || now - adsWindowStart >= windowMs) {
     adsWindowStart = now;
     adsClaimed = normalizeAdsState([]);
+    if (!force) {
+      restoreAttemptsAfterAdsReset();
+    }
     return true;
   }
   return false;
+}
+
+function restoreAttemptsAfterAdsReset() {
+  if (isCooldownActive()) return;
+  usedAttempts = 0;
+  syncAttemptsWithCap();
 }
 
 function getAdsWindowRemainingMs() {
@@ -156,6 +169,18 @@ function getCurrentAttemptCap() {
   return base + bonus;
 }
 
+function syncAttemptsWithCap() {
+  const cap = getCurrentAttemptCap();
+  const available = Math.max(0, cap - usedAttempts);
+  if (available === 0 && usedAttempts === 0) {
+    const seed = cap > 0 ? Math.min(CONFIG.attempts.free, cap) : CONFIG.attempts.free;
+    attempts = Math.max(0, seed);
+    return cap;
+  }
+  attempts = available;
+  return cap;
+}
+
 function enforceAttemptCaps() {
   const now = Date.now();
   if (lockUntil && now >= lockUntil) {
@@ -168,13 +193,7 @@ function enforceAttemptCaps() {
     return;
   }
 
-  const cap = getCurrentAttemptCap();
-  const maxAvailable = Math.max(0, cap - usedAttempts);
-  attempts = Math.min(Math.max(0, attempts), maxAvailable);
-  if (attempts === 0 && usedAttempts === 0) {
-    const seed = cap > 0 ? Math.min(CONFIG.attempts.free, cap) : CONFIG.attempts.free;
-    attempts = Math.max(attempts, seed);
-  }
+  syncAttemptsWithCap();
 }
 
 function saveState() {
@@ -219,7 +238,7 @@ function refreshUI() {
   const reset = maybeResetAdsWindow();
   if (reset) saveState();
   $spinBtn.textContent = `🎰 Girar (${Math.max(0, attempts)} intentos)`;
-  $spinBtn.disabled = spinning || attempts <= 0 || isCooldownActive() || !hasSavedUser();
+  $spinBtn.disabled = spinning || attempts <= 0 || isCooldownActive();
   $wins.innerHTML = "";
   wins.forEach(win => {
     const li = document.createElement("li");
@@ -290,9 +309,7 @@ function handleAdClick(idx, url) {
   window.open(url, "_blank");
   adsClaimed[idx] = true;
   adsWatchedTotal = Math.max(0, adsWatchedTotal) + 1;
-  const cap = getCurrentAttemptCap();
-  const maxAvailable = Math.max(0, cap - usedAttempts);
-  attempts = Math.min((attempts || 0) + (CONFIG.attempts.perAd || 0), maxAvailable);
+  syncAttemptsWithCap();
   saveState();
   refreshUI();
   showAdRewardToast();
@@ -319,7 +336,7 @@ function updateAdMessage() {
   const nextReset = formatDuration(getAdsWindowRemainingMs());
   const adsRequired = getCharacterAdsRequired();
   const adsProgress = Math.min(adsWatchedTotal, adsRequired);
-  $adMessage.textContent = `Oportunidades totales: ${CONFIG.attempts.max} · usadas: ${usedAttempts}. Intentos activos: ${attempts}. Publicidades disponibles esta hora: ${availableAds}/${perWindowLimit} (reinicio en ${nextReset} cada ${minutes} min). Puntos acumulados: ${formatNumber(adsWatchedTotal)}. Progreso para personajes: ${adsProgress}/${adsRequired}.`;
+  $adMessage.textContent = `Oportunidades totales: ${CONFIG.attempts.max} · usadas: ${usedAttempts}. Intentos activos: ${attempts}. Publicidades disponibles en esta ventana: ${availableAds}/${perWindowLimit} (reinicio en ${nextReset} cada ${minutes} min). Puntos acumulados: ${formatNumber(adsWatchedTotal)}. Progreso para personajes: ${adsProgress}/${adsRequired}.`;
 }
 
 function updateRulesProgress() {
@@ -347,11 +364,7 @@ function canClaimPrize(prize) {
 
 function spin() {
   if (!hasSavedUser()) {
-    showAlert({
-      icon: "info",
-      title: "Usuario requerido",
-      text: "Guarda tu nombre antes de usar la ruleta."
-    });
+    showUserReminder(true);
     return;
   }
   if (spinning || attempts <= 0 || isCooldownActive()) return;
@@ -645,6 +658,7 @@ function resetAttempts() {
   usedAttempts = 0;
   lockUntil = null;
   maybeResetAdsWindow(true);
+  syncAttemptsWithCap();
   stopCooldownCountdown();
   saveState();
   renderAds();
@@ -1065,6 +1079,21 @@ function showAlert({
   }
   window.alert(title || text || "");
   return Promise.resolve();
+}
+
+function showUserReminder(focusInput = false) {
+  if (userReminderOpen) return Promise.resolve();
+  userReminderOpen = true;
+  return showAlert({
+    icon: "info",
+    title: "Configura tu usuario",
+    text: "Ingresa tu usuario de Roblox y presiona Guardar. Sin este paso el boton Girar seguira bloqueado."
+  }).finally(() => {
+    userReminderOpen = false;
+    if (focusInput && $userName) {
+      $userName.focus();
+    }
+  });
 }
 
 function showAdRewardToast() {
