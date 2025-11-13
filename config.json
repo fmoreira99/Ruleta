@@ -1,470 +1,151 @@
 {
-  "attempts": {
-    "free": 3,
-    "perAd": 1,
-    "max": 10,
-    "cooldownHours": 3
-  },
+  "attempts": { "free": 1000, "perAd": 1, "max": 3, "cooldownHours": 3 },
   "ads": [
-    {
-      "label": "Publicidad 1",
-      "url": "https://example.com/anuncio-1"
-    },
-    {
-      "label": "Publicidad 2",
-      "url": "https://example.com/anuncio-2"
-    },
-    {
-      "label": "Publicidad 3",
-      "url": "https://example.com/anuncio-3"
-    },
-    {
-      "label": "Publicidad 4",
-      "url": "https://example.com/anuncio-4"
-    },
-    {
-      "label": "Publicidad 5",
-      "url": "https://example.com/anuncio-5"
-    },
-    {
-      "label": "Publicidad 6",
-      "url": "https://example.com/anuncio-6"
-    },
-    {
-      "label": "Publicidad 7",
-      "url": "https://example.com/anuncio-7"
-    },
-    {
-      "label": "Publicidad 8",
-      "url": "https://example.com/anuncio-8"
-    },
-    {
-      "label": "Publicidad 9",
-      "url": "https://example.com/anuncio-9"
-    },
-    {
-      "label": "Publicidad 10",
-      "url": "https://example.com/anuncio-10"
-    }
+    { "label": "Publicidad 1", "url": "https://www.effectivegatecpm.com/bu6ibhkg?key=b2d6c3b416d103d22df6db5181f3132a" },
+    { "label": "Publicidad 2", "url": "https://www.effectivegatecpm.com/d1rfhq04x?key=4f4f9fdf2187e0f0c444b4be9a4a33d0" },
+    { "label": "Publicidad 3", "url": "https://www.effectivegatecpm.com/v25aerat?key=def040d3d143517e61a3d8c4aa4d4300" },
+    { "label": "Publicidad 4", "url": "https://www.effectivegatecpm.com/b3yjr1t700?key=9a9698f66a79ca46b2bee9d3e44f0562" },
+    { "label": "Publicidad 5", "url": "https://www.effectivegatecpm.com/rgtfqwe9?key=17ef86cb7dfb7aaf61b51b12f8f1cdc5" },
+    { "label": "Publicidad 6", "url": "https://www.effectivegatecpm.com/r4495dauq?key=0f15c64a0e85e948409ee9ae93dbff2b" },
+    { "label": "Publicidad 7", "url": "https://www.effectivegatecpm.com/pedjvcva?key=5509ba6b1262369b745cbbc664af8c5d" },
+    { "label": "Publicidad 8", "url": "https://www.effectivegatecpm.com/ttb74c8tq8?key=af1a97f37f5a027bd3d0829a26a90e6e" },
+    { "label": "Publicidad 9", "url": "https://www.effectivegatecpm.com/wqgi71hemu?key=34a9f666596b818861f49f84becb685e" },
+    { "label": "Publicidad 10", "url": "https://www.effectivegatecpm.com/rcbsrwxv58?key=4252999d93bfecfc4aa4dcf8f91fc03b" }
   ],
-  "adsBonus": {
-    "limitPerHour": 10,
-    "windowMinutes": 60
-  },
+  "adsBonus": { "limitPerHour": 10, "windowMinutes": 60 },
   "wheelImage": "https://i.imgur.com/mAOasPP.png",
+  "rules": {
+    "characterAdsRequired": 1000,
+    "characterProbability": 0.1,
+    "robuxWithdrawTarget": 10000,
+    "characterWithdrawRobuxMin": 10000000000
+  },
   "prizes": [
     {
-      "label": "Noobini Pizzanini (Common)",
-      "icon": "🟢",
-      "weight": 300,
-      "color": "#4CAF50",
-      "image": "https://static.beebom.com/wp-content/uploads/2025/07/Screenshot-2025-07-25-114336.jpg"
+      "label": "1 Robux",
+      "value": 1,
+      "weight": 420,
+      "probability": 0.25,
+      "color": "#123d6b",
+      "type": "robux",
+      "image": "https://dummyimage.com/600x600/123d6b/ffffff&text=1%20Robux"
     },
     {
-      "label": "Lirili Larila (Common)",
-      "icon": "🟢",
-      "weight": 300,
-      "color": "#4CAF50",
-      "image": "https://static.beebom.com/wp-content/uploads/2025/07/Screenshot-2025-07-25-114346.jpg"
+      "label": "5 Robux",
+      "value": 5,
+      "weight": 360,
+      "probability": 0.2,
+      "color": "#12365e",
+      "type": "robux",
+      "image": "https://dummyimage.com/600x600/12365e/ffffff&text=5%20Robux"
     },
     {
-      "label": "Tim Cheese (Common)",
-      "icon": "🟢",
-      "weight": 300,
-      "color": "#4CAF50",
-      "image": "https://static.beebom.com/wp-content/uploads/2025/07/Screenshot-2025-07-25-114353.jpg"
+      "label": "10 Robux",
+      "value": 10,
+      "weight": 320,
+      "probability": 0.15,
+      "color": "#0f2f55",
+      "type": "robux",
+      "image": "https://dummyimage.com/600x600/0f2f55/ffffff&text=10%20Robux"
     },
     {
-      "label": "FluriFlura (Common)",
-      "icon": "🟢",
-      "weight": 300,
-      "color": "#4CAF50",
-      "image": "https://static.beebom.com/wp-content/uploads/2025/07/Screenshot-2025-07-25-114400.jpg"
+      "label": "25 Robux",
+      "value": 25,
+      "weight": 280,
+      "probability": 0.1,
+      "color": "#0d3564",
+      "type": "robux",
+      "image": "https://dummyimage.com/600x600/0d3564/ffffff&text=25%20Robux"
     },
     {
-      "label": "Talpa Di Fero (Common)",
-      "icon": "🟢",
-      "weight": 300,
-      "color": "#4CAF50",
-      "image": "https://static.beebom.com/wp-content/uploads/2025/07/Screenshot-2025-07-25-114410.jpg"
+      "label": "50 Robux",
+      "value": 50,
+      "weight": 240,
+      "probability": 0.07,
+      "color": "#174a80",
+      "type": "robux",
+      "image": "https://dummyimage.com/600x600/174a80/ffffff&text=50%20Robux"
     },
     {
-      "label": "Svinina Bombardino (Common)",
-      "icon": "🟢",
-      "weight": 300,
-      "color": "#4CAF50",
-      "image": "https://static.beebom.com/wp-content/uploads/2025/07/Screenshot-2025-07-25-114416.jpg"
-    },
-    {
-      "label": "Pipi Kiwi (Common)",
-      "icon": "🟢",
-      "weight": 300,
-      "color": "#4CAF50",
-      "image": "https://static.beebom.com/wp-content/uploads/2025/07/Screenshot-2025-07-25-115543.jpg"
-    },
-    {
-      "label": "Racooni Jandelini (Common)",
-      "icon": "🟢",
-      "weight": 300,
-      "color": "#4CAF50",
-      "image": "https://static.beebom.com/wp-content/uploads/2025/07/Racooni-Jandelini.jpg"
-    },
-    {
-      "label": "Pipi Corni (Common)",
-      "icon": "🟢",
-      "weight": 300,
-      "color": "#4CAF50",
-      "image": "https://static.beebom.com/wp-content/uploads/2025/07/Pipi-Corni.jpg"
-    },
-    {
-      "label": "Trippi Troppi (Rare)",
-      "icon": "🔵",
+      "label": "100 Robux",
+      "value": 100,
       "weight": 200,
-      "color": "#2196F3",
-      "image": "https://static.beebom.com/wp-content/uploads/2025/07/Screenshot-2025-07-25-114424.jpg"
+      "probability": 0.06,
+      "color": "#1f5d9c",
+      "type": "robux",
+      "image": "https://dummyimage.com/600x600/1f5d9c/ffffff&text=100%20Robux"
     },
     {
-      "label": "Gangster Footera (Rare)",
-      "icon": "🔵",
-      "weight": 200,
-      "color": "#2196F3",
-      "image": "https://static.beebom.com/wp-content/uploads/2025/07/Screenshot-2025-07-25-115555.jpg"
+      "label": "250 Robux",
+      "value": 250,
+      "weight": 150,
+      "probability": 0.05,
+      "color": "#2870b5",
+      "type": "robux",
+      "image": "https://dummyimage.com/600x600/2870b5/ffffff&text=250%20Robux"
     },
     {
-      "label": "Bandito Bobritto (Rare)",
-      "icon": "🔵",
-      "weight": 200,
-      "color": "#2196F3",
-      "image": "https://static.beebom.com/wp-content/uploads/2025/07/Screenshot-2025-07-25-115602.jpg"
+      "label": "500 Robux",
+      "value": 500,
+      "weight": 110,
+      "probability": 0.04,
+      "color": "#2f7fc8",
+      "type": "robux",
+      "image": "https://dummyimage.com/600x600/2f7fc8/ffffff&text=500%20Robux"
     },
     {
-      "label": "Boneca Ambalabu (Rare)",
-      "icon": "🔵",
-      "weight": 200,
-      "color": "#2196F3",
-      "image": "https://static.beebom.com/wp-content/uploads/2025/07/Screenshot-2025-07-25-115610.jpg"
+      "label": "1,000 Robux",
+      "value": 1000,
+      "weight": 70,
+      "probability": 0.03,
+      "color": "#3890dd",
+      "type": "robux",
+      "image": "https://dummyimage.com/600x600/3890dd/ffffff&text=1000%20Robux"
     },
     {
-      "label": "Cacto Hipopotamo (Rare)",
-      "icon": "🔵",
-      "weight": 200,
-      "color": "#2196F3",
-      "image": "https://static.beebom.com/wp-content/uploads/2025/07/Screenshot-2025-07-25-115618.jpg"
+      "label": "2,000 Robux",
+      "value": 2000,
+      "weight": 40,
+      "probability": 0.02,
+      "color": "#3fa0f0",
+      "type": "robux",
+      "image": "https://dummyimage.com/600x600/3fa0f0/0b0f17&text=2000%20Robux"
     },
     {
-      "label": "Ta Ta Ta Ta Sahur (Rare)",
-      "icon": "🔵",
-      "weight": 200,
-      "color": "#2196F3",
-      "image": "https://static.beebom.com/wp-content/uploads/2025/07/Screenshot-2025-07-25-115625.jpg"
-    },
-    {
-      "label": "Tric Trac Baraboom (Rare)",
-      "icon": "🔵",
-      "weight": 200,
-      "color": "#2196F3",
-      "image": "https://static.beebom.com/wp-content/uploads/2025/07/Screenshot-2025-07-25-130413.jpg"
-    },
-    {
-      "label": "Pipi Avocado (Rare)",
-      "icon": "🔵",
-      "weight": 200,
-      "color": "#2196F3",
-      "image": "https://static.beebom.com/wp-content/uploads/2025/07/Steal-a-Brainrot-Pipi-Avocado.jpg"
-    },
-    {
-      "label": "Cappuccino Assassino (Epic)",
-      "icon": "🟣",
-      "weight": 100,
-      "color": "#9C27B0",
-      "image": "https://static.beebom.com/wp-content/uploads/2025/07/Screenshot-2025-07-25-120740.jpg"
-    },
-    {
-      "label": "Brr Brr Patapim (Epic)",
-      "icon": "🟣",
-      "weight": 100,
-      "color": "#9C27B0",
-      "image": "https://static.beebom.com/wp-content/uploads/2025/07/Screenshot-2025-07-25-115740.jpg"
-    },
-    {
-      "label": "Trulimero Trulicina (Epic)",
-      "icon": "🟣",
-      "weight": 100,
-      "color": "#9C27B0",
-      "image": "https://static.beebom.com/wp-content/uploads/2025/07/Screenshot-2025-07-25-115747.jpg"
-    },
-    {
-      "label": "Bambini Crostini (Epic)",
-      "icon": "🟣",
-      "weight": 100,
-      "color": "#9C27B0",
-      "image": "https://static.beebom.com/wp-content/uploads/2025/07/Screenshot-2025-07-25-120747.jpg"
-    },
-    {
-      "label": "Bananita Dolphinita (Epic)",
-      "icon": "🟣",
-      "weight": 100,
-      "color": "#9C27B0",
-      "image": "https://static.beebom.com/wp-content/uploads/2025/07/Screenshot-2025-07-25-115755.jpg"
-    },
-    {
-      "label": "Perochello Lemonchello (Epic)",
-      "icon": "🟣",
-      "weight": 100,
-      "color": "#9C27B0",
-      "image": "https://static.beebom.com/wp-content/uploads/2025/07/Screenshot-2025-07-25-120755.jpg"
-    },
-    {
-      "label": "Brri Brri Bicus Dicus Bombicus (Epic)",
-      "icon": "🟣",
-      "weight": 100,
-      "color": "#9C27B0",
-      "image": "https://static.beebom.com/wp-content/uploads/2025/07/Screenshot-2025-07-25-115802.jpg"
-    },
-    {
-      "label": "Avocadini Guffo (Epic)",
-      "icon": "🟣",
-      "weight": 100,
-      "color": "#9C27B0",
-      "image": "https://static.beebom.com/wp-content/uploads/2025/07/Screenshot-2025-07-25-120800.jpg"
-    },
-    {
-      "label": "Salamino Penguino (Epic)",
-      "icon": "🟣",
-      "weight": 100,
-      "color": "#9C27B0",
-      "image": "https://static.beebom.com/wp-content/uploads/2025/07/Salamino-Penguino.jpg"
-    },
-    {
-      "label": "Ti Ti Ti Sahur (Epic)",
-      "icon": "🟣",
-      "weight": 100,
-      "color": "#9C27B0",
-      "image": "https://static.beebom.com/wp-content/uploads/2025/07/Ti-Ti-Ti-Sahur.jpg"
-    },
-    {
-      "label": "Penguino Cocosino (Epic)",
-      "icon": "🟣",
-      "weight": 100,
-      "color": "#9C27B0",
-      "image": "https://static.beebom.com/wp-content/uploads/2025/07/Penguino-Cocosino.jpg"
-    },
-    {
-      "label": "Burbaloni Loliloli (Legendary)",
-      "icon": "🟠",
-      "weight": 50,
-      "color": "#FF9800",
-      "image": "https://static.beebom.com/wp-content/uploads/2025/07/Screenshot-2025-07-25-115810.jpg"
-    },
-    {
-      "label": "Chimpazini Bananini (Legendary)",
-      "icon": "🟠",
-      "weight": 50,
-      "color": "#FF9800",
-      "image": "https://static.beebom.com/wp-content/uploads/2025/07/Screenshot-2025-07-25-115814.jpg"
-    },
-    {
-      "label": "Ballerina Cappuccina (Legendary)",
-      "icon": "🟠",
-      "weight": 50,
-      "color": "#FF9800",
-      "image": "https://static.beebom.com/wp-content/uploads/2025/07/Screenshot-2025-07-25-115821.jpg"
-    },
-    {
-      "label": "Chef Crabracadabra (Legendary)",
-      "icon": "🟠",
-      "weight": 50,
-      "color": "#FF9800",
-      "image": "https://static.beebom.com/wp-content/uploads/2025/07/Screenshot-2025-07-25-115828.jpg"
-    },
-    {
-      "label": "Lionel Cactuseli (Legendary)",
-      "icon": "🟠",
-      "weight": 50,
-      "color": "#FF9800",
-      "image": "https://static.beebom.com/wp-content/uploads/2025/07/Screenshot-2025-07-25-120808.jpg"
-    },
-    {
-      "label": "Glorbo Fruttodrillo (Legendary)",
-      "icon": "🟠",
-      "weight": 50,
-      "color": "#FF9800",
-      "image": "https://static.beebom.com/wp-content/uploads/2025/07/Screenshot-2025-07-25-115836.jpg"
-    },
-    {
-      "label": "Blueberrini Octopusini (Legendary)",
-      "icon": "🟠",
-      "weight": 50,
-      "color": "#FF9800",
-      "image": "https://static.beebom.com/wp-content/uploads/2025/07/Screenshot-2025-07-25-125028.jpg"
-    },
-    {
-      "label": "Strawberelli Flamingelli (Legendary)",
-      "icon": "🟠",
-      "weight": 50,
-      "color": "#FF9800",
-      "image": "https://static.beebom.com/wp-content/uploads/2025/07/image-32.jpg"
-    },
-    {
-      "label": "Pandaccini Bananini (Legendary)",
-      "icon": "🟠",
-      "weight": 50,
-      "color": "#FF9800",
-      "image": "https://static.beebom.com/wp-content/uploads/2025/07/Screenshot-2025-07-25-130442.jpg"
-    },
-    {
-      "label": "Cocosini Mama (Legendary)",
-      "icon": "🟠",
-      "weight": 50,
-      "color": "#FF9800",
-      "image": "https://static.beebom.com/wp-content/uploads/2025/07/Cocosini-Mama.jpg"
-    },
-    {
-      "label": "Sigma Boy (Legendary)",
-      "icon": "🟠",
-      "weight": 50,
-      "color": "#FF9800",
-      "image": "https://static.beebom.com/wp-content/uploads/2025/07/Sigma-Boy.jpg"
-    },
-    {
-      "label": "Sigma Girl (Legendary)",
-      "icon": "🟠",
-      "weight": 50,
-      "color": "#FF9800",
-      "image": "https://static.beebom.com/wp-content/uploads/2025/07/Sigma-Girl.jpg"
-    },
-    {
-      "label": "Pi Pi Watermelon (Legendary)",
-      "icon": "🟠",
-      "weight": 50,
-      "color": "#FF9800",
-      "image": "https://static.beebom.com/wp-content/uploads/2025/07/Pi-Pi-Watermelon.jpg"
-    },
-    {
-      "label": "Frigo Camelo (Mythic)",
-      "icon": "🟡",
+      "label": "5,000 Robux",
+      "value": 5000,
       "weight": 20,
-      "color": "#FFEB3B",
-      "image": "https://static.beebom.com/wp-content/uploads/2025/07/Screenshot-2025-07-25-115843.jpg"
+      "probability": 0.015,
+      "color": "#4ab3ff",
+      "type": "robux",
+      "image": "https://dummyimage.com/600x600/4ab3ff/0b0f17&text=5000%20Robux"
     },
     {
-      "label": "Orangutini Ananassini (Mythic)",
-      "icon": "🟡",
-      "weight": 20,
-      "color": "#FFEB3B",
-      "image": "https://static.beebom.com/wp-content/uploads/2025/07/Screenshot-2025-07-25-115851.jpg"
-    },
-    {
-      "label": "Rhino Toasterino (Mythic)",
-      "icon": "🟡",
-      "weight": 20,
-      "color": "#FFEB3B",
-      "image": "https://static.beebom.com/wp-content/uploads/2025/07/Screenshot-2025-07-25-115858.jpg"
-    },
-    {
-      "label": "Bombardiro Crocodilo (Mythic)",
-      "icon": "🟡",
-      "weight": 20,
-      "color": "#FFEB3B",
-      "image": "https://static.beebom.com/wp-content/uploads/2025/07/Screenshot-2025-07-25-115912.jpg"
-    },
-    {
-      "label": "Bombombini Gusini (Mythic)",
-      "icon": "🟡",
-      "weight": 20,
-      "color": "#FFEB3B",
-      "image": "https://static.beebom.com/wp-content/uploads/2025/07/Screenshot-2025-07-25-115921.jpg"
-    },
-    {
-      "label": "Cavallo Virtuso (Mythic)",
-      "icon": "🟡",
-      "weight": 20,
-      "color": "#FFEB3B",
-      "image": "https://static.beebom.com/wp-content/uploads/2025/07/Cavallo-Virtuso.jpg"
-    },
-    {
-      "label": "Gorillo Watermelondrillo (Mythic)",
-      "icon": "🟡",
-      "weight": 20,
-      "color": "#FFEB3B",
-      "image": "https://static.beebom.com/wp-content/uploads/2025/07/Gorillo-Watermelondrillo.jpg"
-    },
-    {
-      "label": "Avocadorilla (Mythic)",
-      "icon": "🟡",
-      "weight": 20,
-      "color": "#FFEB3B",
-      "image": "https://static.beebom.com/wp-content/uploads/2025/07/Avocadorilla.jpg"
-    },
-    {
-      "label": "Tob Tobi Tobi (Mythic)",
-      "icon": "🟡",
-      "weight": 20,
-      "color": "#FFEB3B",
-      "image": "https://static.beebom.com/wp-content/uploads/2025/07/Tob-Tobi-Tobi.jpg"
-    },
-    {
-      "label": "Ganganzelli Trulala (Mythic)",
-      "icon": "🟡",
-      "weight": 20,
-      "color": "#FFEB3B",
-      "image": "https://static.beebom.com/wp-content/uploads/2025/07/Gangazelli-Trulala.jpg"
-    },
-    {
-      "label": "Cachorrito Melonito (Mythic)",
-      "icon": "🟡",
-      "weight": 20,
-      "color": "#FFEB3B",
-      "image": "https://static.beebom.com/wp-content/uploads/2025/07/Cachorrito-Melonito.jpg"
-    },
-    {
-      "label": "Elefanto Frigo (Mythic)",
-      "icon": "🟡",
-      "weight": 20,
-      "color": "#FFEB3B",
-      "image": "https://static.beebom.com/wp-content/uploads/2025/07/Elefanto-Frigo.jpg"
-    },
-    {
-      "label": "Toiletto Focaccino (Mythic)",
-      "icon": "🟡",
-      "weight": 20,
-      "color": "#FFEB3B",
-      "image": ""
-    },
-    {
-      "label": "Te Te Te Sahur (Mythic)",
-      "icon": "🟡",
-      "weight": 20,
-      "color": "#FFEB3B",
-      "image": "https://static.beebom.com/wp-content/uploads/2025/07/Te-Te-Te-Sahur.jpg"
-    },
-    {
-      "label": "Tracoducotulu Delapeladustuz (Mythic)",
-      "icon": "🟡",
-      "weight": 20,
-      "color": "#FFEB3B",
-      "image": "https://static.beebom.com/wp-content/uploads/2025/07/Tracoducotulu-Delapeladustuz.jpg"
-    },
-    {
-      "label": "Lerulerulerule (Mythic)",
-      "icon": "🟡",
-      "weight": 20,
-      "color": "#FFEB3B",
-      "image": "https://static.beebom.com/wp-content/uploads/2025/07/Lerulerulerule.jpg"
-    },
-    {
-      "label": "Carloo (Mythic Admin Lucky Block)",
-      "icon": "👑",
-      "weight": 5,
-      "color": "#FFC107",
-      "image": "https://static.beebom.com/wp-content/uploads/2025/07/Carloo.jpg"
-    },
-    {
-      "label": "Spioniro Golubiro (Mythic Lucky)",
-      "icon": "⭐",
+      "label": "10,000 Robux",
+      "value": 10000,
       "weight": 10,
-      "color": "#FFD700",
-      "image": "https://static.beebom.com/wp-content/uploads/2025/07/Screenshot-2025-07-25-130530.jpg"
+      "probability": 0.01,
+      "color": "#57c4ff",
+      "type": "robux",
+      "image": "https://dummyimage.com/600x600/57c4ff/0b0f17&text=10000%20Robux"
+    },
+    {
+      "label": "20,000 Robux",
+      "value": 20000,
+      "weight": 6,
+      "probability": 0.004,
+      "color": "#68d5ff",
+      "type": "robux",
+      "image": "https://dummyimage.com/600x600/68d5ff/0b0f17&text=20000%20Robux"
+    },
+    {
+      "label": "Personaje Premium",
+      "weight": 1,
+      "probability": 0.001,
+      "color": "#f59e0b",
+      "type": "character",
+      "requiresAds": 1000,
+      "image": "https://i.imgur.com/LC2rjEV.png"
     }
   ]
 }
