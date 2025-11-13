@@ -265,7 +265,6 @@ function renderAds() {
     btn.disabled =
       claimed ||
       limitReached ||
-      spinning ||
       isCooldownActive() ||
       !hasSavedUser();
     btn.onclick = () => handleAdClick(idx, ad.url);
