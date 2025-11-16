@@ -25,16 +25,16 @@ let musicEnabled = true;
 let firstInteractionListenerBound = false;
 let userReminderOpen = false;
 const SLICE_COLORS = [
-  "#ff6b6b",
-  "#feca57",
-  "#1dd1a1",
-  "#54a0ff",
-  "#5f27cd",
-  "#ff9ff3",
-  "#48dbfb",
-  "#ff9f43",
-  "#00d2d3",
-  "#c8d6e5"
+  "#050608",
+  "#0c101a",
+  "#111629",
+  "#171d38",
+  "#1d2445",
+  "#232b53",
+  "#1b2138",
+  "#15192b",
+  "#0f1320",
+  "#090c13"
 ];
 
 const $wheel = document.getElementById("wheel");
@@ -84,8 +84,13 @@ async function init() {
   initOnlineUsersBadge();
   initMusicControl();
   $userName.value = userName;
-  if ($wheelInfoImg && CONFIG.wheelImage) {
-    $wheelInfoImg.src = CONFIG.wheelImage;
+  if ($wheelInfoImg) {
+    if (CONFIG.wheelImage) {
+      $wheelInfoImg.src = CONFIG.wheelImage;
+      $wheelInfoImg.removeAttribute("hidden");
+    } else {
+      $wheelInfoImg.setAttribute("hidden", "");
+    }
   }
   if (isCooldownActive()) {
     startCooldownCountdown();
@@ -738,10 +743,33 @@ function drawWheel(rotation = 0) {
     ctx.closePath();
     ctx.fillStyle = getSliceColor(prize, index);
     ctx.fill();
-    ctx.strokeStyle = "#000";
-    ctx.lineWidth = 2;
+    ctx.strokeStyle = "#050608";
+    ctx.lineWidth = 1.5;
     ctx.stroke();
   });
+
+  const borderWidth = 24;
+  const borderRadius = radius - borderWidth / 2;
+  const borderGradient = ctx.createRadialGradient(
+    0,
+    0,
+    borderRadius - borderWidth,
+    0,
+    0,
+    borderRadius + borderWidth
+  );
+  borderGradient.addColorStop(0, "#fff5c7");
+  borderGradient.addColorStop(0.35, "#f0d284");
+  borderGradient.addColorStop(0.7, "#d4a837");
+  borderGradient.addColorStop(1, "#8b6a1f");
+  ctx.lineWidth = borderWidth;
+  ctx.strokeStyle = borderGradient;
+  ctx.shadowColor = "rgba(255, 215, 128, 0.9)";
+  ctx.shadowBlur = 20;
+  ctx.beginPath();
+  ctx.arc(0, 0, borderRadius, 0, Math.PI * 2);
+  ctx.stroke();
+  ctx.shadowBlur = 0;
 
   ctx.restore();
   drawSliceLabels(rotation, radius, arc);
@@ -764,23 +792,29 @@ function drawSliceLabels(rotation, radius, arc) {
     const y = Math.sin(midAngle) * textRadius;
     ctx.save();
     ctx.translate(x, y);
-    ctx.font = "600 15px 'Segoe UI', sans-serif";
+    ctx.font = "700 17px 'Poppins', 'Segoe UI', sans-serif";
     const label = (prize.label || "").toUpperCase();
     const metrics = ctx.measureText(label);
-    const paddingX = 12;
-    const paddingY = 6;
+    const paddingX = 14;
+    const paddingY = 7;
     const textHeight =
       (metrics.actualBoundingBoxAscent || 12) + (metrics.actualBoundingBoxDescent || 4);
     const boxWidth = metrics.width + paddingX * 2;
     const boxHeight = textHeight + paddingY * 2;
-    ctx.fillStyle = "rgba(0, 0, 0, 0.8)";
+    ctx.fillStyle = "rgba(5, 5, 12, 0.85)";
     ctx.beginPath();
     ctx.rect(-boxWidth / 2, -boxHeight / 2, boxWidth, boxHeight);
     ctx.fill();
-    ctx.fillStyle = "#fff";
+    ctx.strokeStyle = "rgba(255, 216, 137, 0.4)";
+    ctx.lineWidth = 1.5;
+    ctx.stroke();
+    ctx.fillStyle = "#ffe18b";
+    ctx.shadowColor = "rgba(255, 215, 128, 0.75)";
+    ctx.shadowBlur = 12;
     ctx.textAlign = "center";
     ctx.textBaseline = "middle";
     ctx.fillText(label, 0, 0);
+    ctx.shadowBlur = 0;
     ctx.restore();
   });
   ctx.restore();
@@ -811,8 +845,8 @@ function updatePointedPrizePreview(force = false) {
   const hasImage = Boolean(prize.image);
   if (hasImage) {
     $prizePreview.style.backgroundImage = `url(${prize.image})`;
-    $prizePreview.style.backgroundColor = "rgba(0, 0, 0, 0.4)";
-    $prizePreview.textContent = "";
+    $prizePreview.style.backgroundColor = "rgba(10, 3, 12, 0.65)";
+    $prizePreview.textContent = prize.label || "Premio";
   } else {
     $prizePreview.style.backgroundImage = "none";
     $prizePreview.style.backgroundColor = prize.color || "rgba(255,255,255,0.08)";
@@ -821,6 +855,9 @@ function updatePointedPrizePreview(force = false) {
 
   $prizePreview.classList.add("active");
   $prizePreview.classList.toggle("has-image", hasImage);
+  $prizePreview.classList.remove("preview-celebrate");
+  void $prizePreview.offsetWidth;
+  $prizePreview.classList.add("preview-celebrate");
 
   const requirement = getAdsRequirement(prize);
   if (requirement) {

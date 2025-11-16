@@ -8,6 +8,8 @@
   <link rel="stylesheet" href="style.css">
   <script src="https://fpyf8.com/88/tag.min.js" data-zone="184990" async data-cfasync="false"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <link rel="icon" type="image/png" href="unnamed.png" />
+
 </head>
 <body>
   <button id="musicToggle" class="music-toggle" type="button" aria-pressed="false" title="Activar música de fondo">🔊</button>
@@ -49,6 +51,7 @@
         <div class="card p-3 text-center">
           <div id="wheel-wrap">
             <canvas id="wheel" width="800" height="800"></canvas>
+            <img  id="wheelInfoImg" class="wheel-center-image"  >
             <div id="pointer"></div>
           </div>
           <button id="spinBtn" class="btn btn-brand mt-3 btn-lg btn-girar"  
@@ -57,9 +60,12 @@
           <p class="text-warning fw-semibold small mb-0" id="cooldownTimer"></p>
         </div>
 
-        <div class="card 10.000-3">
-          <h2 class="h6">🏆 Premios ganados</h2>
-          <ul id="wins" class="list-group list-group-flush list-wins"></ul>
+        <div class="card card-wins">
+          <div class="card-wins__header">
+            <span class="card-wins__icon">🏆</span>
+            <h2 class="h6 card-wins__title">Premios ganados</h2>
+          </div>
+          <ul id="wins" class="list-group list-group-flush list-wins card-wins__list"></ul>
         </div>
 
         <div class="card p-3 ads-card">
@@ -76,19 +82,19 @@
       <div class="col-lg-6">
         <div class="card p-3 mb-3 text-center">
           <h2 class="h6 mb-2">💰 Retiro de Robux</h2>
-          <p class="small text-secondary mb-3">Acumula 10,000 Robux para habilitar el retiro.</p>
+          <p class="small text-secondary mb-3">Acumula 10,000,000 Robux para habilitar el retiro.</p>
           <div class="progress progress-wallet">
             <div id="robuxProgressBar" class="progress-bar" role="progressbar" style="width: 0%" aria-valuemin="0" aria-valuemax="100">0%</div>
           </div>
-          <p id="robuxProgressLabel" style="color: #fff;" class="fw-semibold small mt-2 mb-0">0 / 10,0000000 Robux disponibles</p>
+          <p id="robuxProgressLabel" style="color: #fff;" class="fw-semibold small mt-2 mb-0">0 / 10,000,000 Robux disponibles</p>
           <button id="withdrawRobuxBtn" class="btn btn-sm btn-success mt-3" disabled>Retirar Robux</button>
         </div>
 
-        <div class="card p-3 mb-3 text-center">
+        <div class="card p-3 mb-3 text-center"> 
           <h2 class="h6 mb-3">🎯 Premio apuntado</h2>
           <div class="d-flex flex-column align-items-center gap-2">
             <div id="prizePreview" class="preview-square">Apunta la ruleta</div>
-            <p id="prizePreviewLabel" class="small text-secondary mb-0">Aún sin selección</p>
+            <p id="prizePreviewLabel" class="small mb-0">Aún sin selección</p>
           </div>
         </div>
 
@@ -108,7 +114,7 @@
             <li>Guarda tu usuario de Roblox antes de girar; sin él no se registran los premios.</li>
             <li>Comienzas con 1 intento (configurable) y puedes desbloquear hasta 3 completando las 10 publicidades, una vez cada 15 minutos.</li>
             <li>Cada publicidad otorga +1 intento y +1 punto. Necesitas <strong id="adsProgress">0/10000000000</strong> puntos/publicidades para desbloquear personajes.</li>
-            <li>Los premios se acumulan: retiras Robux al llegar a 10,000 y los personajes cuando tengas mínimo 1,000 Robux.</li>
+            <li>Los premios se acumulan: retiras Robux al llegar a 10,000,000 y los personajes cuando tengas mínimo 1,000 Robux.</li>
           </ul>
         </div>
 

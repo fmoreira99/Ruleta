@@ -1,23 +1,23 @@
 {
   "attempts": { "free": 1000, "perAd": 1, "max": 3, "cooldownHours": 0.25 },
   "ads": [
-    { "label": "Publicidad 1", "url": "https://www.effectivegatecpm.com/bu6ibhkg?key=b2d6c3b416d103d22df6db5181f3132a" },
-    { "label": "Publicidad 2", "url": "https://www.effectivegatecpm.com/d1rfhq04x?key=4f4f9fdf2187e0f0c444b4be9a4a33d0" },
-    { "label": "Publicidad 3", "url": "https://www.effectivegatecpm.com/v25aerat?key=def040d3d143517e61a3d8c4aa4d4300" },
-    { "label": "Publicidad 4", "url": "https://www.effectivegatecpm.com/b3yjr1t700?key=9a9698f66a79ca46b2bee9d3e44f0562" },
-    { "label": "Publicidad 5", "url": "https://www.effectivegatecpm.com/rgtfqwe9?key=17ef86cb7dfb7aaf61b51b12f8f1cdc5" },
-    { "label": "Publicidad 6", "url": "https://www.effectivegatecpm.com/r4495dauq?key=0f15c64a0e85e948409ee9ae93dbff2b" },
-    { "label": "Publicidad 7", "url": "https://www.effectivegatecpm.com/pedjvcva?key=5509ba6b1262369b745cbbc664af8c5d" },
-    { "label": "Publicidad 8", "url": "https://www.effectivegatecpm.com/ttb74c8tq8?key=af1a97f37f5a027bd3d0829a26a90e6e" },
-    { "label": "Publicidad 9", "url": "https://www.effectivegatecpm.com/wqgi71hemu?key=34a9f666596b818861f49f84becb685e" },
-    { "label": "Publicidad 10", "url": "https://www.effectivegatecpm.com/rcbsrwxv58?key=4252999d93bfecfc4aa4dcf8f91fc03b" }
+    { "label": "Publicidad 1", "url": "https://otieu.com/4/10147861" },
+    { "label": "Publicidad 2", "url": "https://otieu.com/4/10193937" },
+    { "label": "Publicidad 3", "url": "https://otieu.com/4/10193949" },
+    { "label": "Publicidad 4", "url": "https://otieu.com/4/10193950" },
+    { "label": "Publicidad 5", "url": "https://otieu.com/4/10193951" },
+    { "label": "Publicidad 6", "url": "https://otieu.com/4/10193953" },
+    { "label": "Publicidad 7", "url": "https://otieu.com/4/10193954" },
+    { "label": "Publicidad 8", "url": "https://otieu.com/4/10193955" },
+    { "label": "Publicidad 9", "url": "https://otieu.com/4/10193956" },
+    { "label": "Publicidad 10", "url": "https://otieu.com/4/10193957" }
   ],
   "adsBonus": { "limitPerHour": 10, "windowMinutes": 15 },
-  "wheelImage": "https://i.imgur.com/mAOasPP.png",
+  "wheelImage": "unnamed.png",
   "rules": {
     "characterAdsRequired": 1000,
     "characterProbability": 0.1,
-    "robuxWithdrawTarget": 10000,
+    "robuxWithdrawTarget": 10000000,
     "characterWithdrawRobuxMin": 10000000000
   },
   "prizes": [
