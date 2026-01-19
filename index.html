@@ -1,128 +1,196 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Ruleta de Premios</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <title>Casino Fortuna - Ruleta de Premios</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto+Condensed:wght@300;400;700&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
   <script src="https://fpyf8.com/88/tag.min.js" data-zone="184990" async data-cfasync="false"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <link rel="icon" type="image/png" href="unnamed.png" />
-
 </head>
+
 <body>
-  <button id="musicToggle" class="music-toggle" type="button" aria-pressed="false" title="Activar música de fondo">🔊</button>
-  <audio id="bgMusic" src="phonk-music-phonk-2025-432208 (1).mp3" preload="auto" loop></audio>
-  <div class="online-users-card" role="status" aria-live="polite">
-    <div class="online-users-card__icon">👥</div>
-    <div class="online-users-card__body">
-      <span class="online-users-card__label">Usuarios conectados</span>
-      <span id="onlineUsersCount" class="online-users-card__value">0</span>
-    </div>
-  </div>
-  <div id="firstSpinHint" class="first-spin-hint" aria-hidden="true">
-    <p class="first-spin-hint__text">
-      Para conseguir otro intento, haz clic en una publicidad amarilla y complétala.
-    </p>
-    <span class="first-spin-hint__arrow">⬇️</span>
-  </div>
-  <div class="container py-4">
-    <header class="mb-4 d-flex flex-wrap align-items-center justify-content-between gap-3">
-      <h1 class="h4 m-0">🎡 Ruleta</h1>
-      <div class="d-flex align-items-center gap-2">
-        <input id="userName" type="text" class="form-control form-control-sm" placeholder="Usuario de Roblox" autocomplete="off" style="width:180px">
-        <button id="saveUser" class="btn btn-sm btn-success">Guardar</button>
-      </div>
-    </header>
+  <!-- Particles Background -->
+  <div id="particles-js"></div>
 
-    <div id="attemptsBanner" class="attempts-banner" role="status" aria-live="polite" aria-hidden="true">
-      <div class="attempts-banner__icon">⏱️</div>
-      <div class="attempts-banner__text">
-        <strong class="attempts-banner__title">Sin intentos disponibles</strong>
-        <span class="attempts-banner__hint">Para seguir jugando haz clic en la publicidad amarilla destacada y desbloquea nuevos intentos.</span>
-        <span class="attempts-banner__timer">Próximos intentos en <span id="attemptsBannerTimer">00:00:00</span></span>
+  <!-- Scroll Down Button (Floating) -->
+  <button id="scrollDownBtn" class="scroll-down-btn" type="button" title="Ver más abajo">
+    <img src="Personaje.png" alt="Ver más" class="scroll-btn-image">
+  </button>
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="top-bar-left">
+      <div class="logo-section">
+        <div class="logo">🎰 CASINO FORTUNA</div>
+        <div class="online-badge">
+          <span class="pulse-dot"></span>
+          <span id="onlineUsersCount">0</span> EN LÍNEA
+        </div>
       </div>
     </div>
 
-    <div class="row g-4">
-      <!-- Ruleta -->
-      <div class="col-lg-6 d-flex flex-column gap-3">
-        <div class="card p-3 text-center">
-          <div id="wheel-wrap">
-            <canvas id="wheel" width="800" height="800"></canvas>
-            <img  id="wheelInfoImg" class="wheel-center-image"  >
-            <div id="pointer"></div>
-          </div>
-          <button id="spinBtn" class="btn btn-brand mt-3 btn-lg btn-girar"  
-          style="color: #fff;">🎰 Girar</button>
-          <p class="text-secondary mt-2 mb-1" id="adMessage"></p>
-          <p class="text-warning fw-semibold small mb-0" id="cooldownTimer"></p>
-        </div>
+    <div class="top-bar-center">
+      <input id="userName" type="text" class="user-input" placeholder="Ingresa tu Usuario de Roblox" autocomplete="off">
+      <button id="saveUser" class="btn-save">GUARDAR</button>
+    </div>
 
-        <div class="card card-wins">
-          <div class="card-wins__header">
-            <span class="card-wins__icon">🏆</span>
-            <h2 class="h6 card-wins__title">Premios ganados</h2>
-          </div>
-          <ul id="wins" class="list-group list-group-flush list-wins card-wins__list"></ul>
-        </div>
-
-        <div class="card p-3 ads-card">
-          <h2 class="h6 mb-2">⚡ Obtener más intentos</h2>
-          <div class="ads-card__scroll">
-            <p class="small text-secondary mb-1">Haz clic en cada publicidad para sumar +1 intento y +1 punto. Cada anuncio solo se puede reclamar una vez cada 15 minutos.</p>
-            <p class="small text-secondary mb-2">Puntos acumulados: <strong id="adPointsTotal">0</strong></p>
-            <div id="ads-buttons" class="d-grid gap-2 mt-2"></div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Valores + panel lateral -->
-      <div class="col-lg-6">
-        <div class="card p-3 mb-3 text-center">
-          <h2 class="h6 mb-2">💰 Retiro de Robux</h2>
-          <p class="small text-secondary mb-3">Acumula 10,000,000 Robux para habilitar el retiro.</p>
-          <div class="progress progress-wallet">
-            <div id="robuxProgressBar" class="progress-bar" role="progressbar" style="width: 0%" aria-valuemin="0" aria-valuemax="100">0%</div>
-          </div>
-          <p id="robuxProgressLabel" style="color: #fff;" class="fw-semibold small mt-2 mb-0">0 / 10,000,000 Robux disponibles</p>
-          <button id="withdrawRobuxBtn" class="btn btn-sm btn-success mt-3" disabled>Retirar Robux</button>
-        </div>
-
-        <div class="card p-3 mb-3 text-center"> 
-          <h2 class="h6 mb-3">🎯 Premio apuntado</h2>
-          <div class="d-flex flex-column align-items-center gap-2">
-            <div id="prizePreview" class="preview-square">Apunta la ruleta</div>
-            <p id="prizePreviewLabel" class="small mb-0">Aún sin selección</p>
-          </div>
-        </div>
-
-        <div class="card p-3 mb-3">
-          <h2 class="h6 mb-2">🧬 Personajes por retirar</h2>
-          <p class="small text-secondary mb-3">Necesitas 1,000 Robux acumulados para solicitar cualquier personaje.</p>
-          <div class="progress progress-wallet">
-            <div id="characterProgressBar" class="progress-bar bg-warning text-dark" role="progressbar" style="width: 0%" aria-valuemin="0" aria-valuemax="100">0%</div>
-          </div>
-          <p id="characterProgressLabel"  style="color: #fff;" class="fw-semibold small mt-2 mb-3">Robux actuales 0 / 1,00000</p>
-          <ul id="charactersList" class="list-group list-group-flush wallet-list small"></ul>
-        </div>
-
-        <div class="card p-3 mb-3 text-light small rules-card">
-          <h2 class="h6 mb-2">Reglas del juego</h2>
-          <ul class="mb-0 ps-3 rules-list">
-            <li>Guarda tu usuario de Roblox antes de girar; sin él no se registran los premios.</li>
-            <li>Comienzas con 1 intento (configurable) y puedes desbloquear hasta 3 completando las 10 publicidades, una vez cada 15 minutos.</li>
-            <li>Cada publicidad otorga +1 intento y +1 punto. Necesitas <strong id="adsProgress">0/10000000000</strong> puntos/publicidades para desbloquear personajes.</li>
-            <li>Los premios se acumulan: retiras Robux al llegar a 10,000,000 y los personajes cuando tengas mínimo 1,000 Robux.</li>
-          </ul>
-        </div>
-
-      </div>
+    <div class="top-bar-right">
+      <!-- Espacio para balance futuro -->
     </div>
   </div>
-<script id="_wauql0">var _wau = _wau || []; _wau.push(["dynamic", "t0iphf248z", "ql0", "c4302bffffff", "small"]);</script><script async src="//waust.at/d.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  <!-- Prizes Showcase (PRIMERO) -->
+  <div class="prizes-showcase">
+    <div class="showcase-header">
+      <div class="showcase-info">
+        <h2 class="showcase-title">🎁 BRAINROTS DISPONIBLES</h2>
+        <p class="showcase-subtitle">Roba un Brainrot para obtener un intento gratis en la ruleta</p>
+      </div>
+      <button id="goToWheelBtn" class="btn-go-wheel">
+        <span class="wheel-icon">🎰</span>
+        <span class="btn-text">IR A LA RULETA</span>
+      </button>
+    </div>
+    <div class="prizes-container" id="prizesContainer">
+      <div class="loading-prizes">Cargando Brainrots...</div>
+    </div>
+  </div>
+
+  <!-- Main Container (SEGUNDO) -->
+  <div class="main-container">
+
+    <!-- Left Panel: Game Area -->
+    <div class="game-panel">
+
+      <!-- Slot Machine Display -->
+      <div class="slot-machine-display">
+        <div class="jackpot-label">JACKPOT</div>
+        <div class="jackpot-amount" id="jackpot-ticker">9,842,100</div>
+
+        <div class="slot-reels-container">
+          <div class="slot-reel" id="reel1">7</div>
+          <div class="slot-reel" id="reel2">7</div>
+          <div class="slot-reel" id="reel3">7</div>
+        </div>
+
+        <div class="rng-display">
+          <span class="rng-label">RNG:</span>
+          <span class="rng-value" id="rng-display">0 0 0 0 0 0</span>
+        </div>
+      </div>
+
+      <!-- Wheel Section -->
+      <div class="wheel-section">
+        <canvas id="wheel" width="500" height="500"></canvas>
+        <div class="wheel-pointer">▼</div>
+        <div class="wheel-center">★</div>
+      </div>
+
+      <!-- Spin Controls -->
+      <div class="spin-controls">
+        <div class="attempts-badge" id="attemptsDisplay">INTENTOS: 0</div>
+        <button id="spinBtn" class="btn-spin" disabled>
+          <span>🎰 GIRAR</span>
+        </button>
+        <div class="status-message" id="adMessage"></div>
+        <div class="cooldown-timer" id="cooldownTimer"></div>
+      </div>
+
+    </div>
+
+    <!-- Right Panel: Info & Actions -->
+    <div class="info-panel">
+
+      <!-- Robux Withdrawal -->
+      <div class="info-card wallet-card">
+        <div class="card-header">
+          <span class="card-icon">💰</span>
+          <h3>RETIRO DE ROBUX</h3>
+        </div>
+        <div class="card-body">
+          <div class="robux-stats">
+            <div class="stat-item">
+              <span class="stat-label">ACUMULADO</span>
+              <span class="stat-value" id="robuxAccumulated">0 R$</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-label">OBJETIVO</span>
+              <span class="stat-value">10,000,000 R$</span>
+            </div>
+          </div>
+
+          <div class="progress-bar-container">
+            <div id="robuxProgressBar" class="progress-bar" style="width: 0%">
+              <span class="progress-text">0%</span>
+            </div>
+          </div>
+
+          <p id="robuxProgressLabel" class="progress-label">0 / 10,000,000 Robux</p>
+
+          <button id="withdrawRobuxBtn" class="btn-withdraw">
+            <span class="btn-icon">💎</span>
+            <span class="btn-text">RETIRAR ROBUX</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Ads Section -->
+      <div class="info-card ads-card">
+        <div class="card-header">
+          <span class="card-icon">⚡</span>
+          <h3>OBTENER INTENTOS</h3>
+        </div>
+        <div class="card-body">
+          <div class="ads-info-box">
+            <div class="ads-stat">
+              <span class="ads-stat-icon">🎯</span>
+              <div class="ads-stat-content">
+                <span class="ads-stat-label">Puntos Totales</span>
+                <span class="ads-stat-value" id="adPointsTotal">0</span>
+              </div>
+            </div>
+            <div class="ads-stat">
+              <span class="ads-stat-icon">🎁</span>
+              <div class="ads-stat-content">
+                <span class="ads-stat-label">Por Publicidad</span>
+                <span class="ads-stat-value">+1 Intento</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="ads-instructions">
+            <p>💡 Mira una publicidad para obtener <strong>+1 intento gratis</strong></p>
+            <p>⏰ Las publicidades se reinician cada <strong>15 minutos</strong></p>
+          </div>
+
+          <div id="ads-buttons" class="ads-grid"></div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- Cooldown Banner -->
+  <div id="attemptsBanner" class="attempts-banner" style="display: none;">
+    <div class="banner-content">
+      <strong>🪙 Sin fichas!</strong>
+      <span id="attemptsBannerTimer">00:00:00</span>
+    </div>
+  </div>
+
+  <script
+    id="_wauql0">var _wau = _wau || []; _wau.push(["dynamic", "t0iphf248z", "ql0", "c4302bffffff", "small"]);</script>
+  <script async src="//waust.at/d.js"></script>
   <script src="script.js"></script>
+  <script src="script-patch.js"></script>
 </body>
+
 </html>

@@ -1,0 +1,135 @@
+{
+    "rare": [
+        {
+            "name": "Agarrini La Palini",
+            "image": "https://static.wikia.nocookie.net/plants-vs-brainro-ts/images/1/19/AgarriniLaPalini.png",
+            "color": "#ff6b9d"
+        },
+        {
+            "name": "Espresso Signora",
+            "image": "https://static.wikia.nocookie.net/plants-vs-brainro-ts/images/a/ad/Espresso.png",
+            "color": "#8b4513"
+        },
+        {
+            "name": "Lirili Larila",
+            "image": "https://static.wikia.nocookie.net/plants-vs-brainro-ts/images/d/da/Lirililarila.png",
+            "color": "#ff1493"
+        },
+        {
+            "name": "Mini Cheese",
+            "image": "https://static.wikia.nocookie.net/plants-vs-brainro-ts/images/6/65/Mini_Cheese.png",
+            "color": "#ffd700"
+        },
+        {
+            "name": "Noobini Bananini",
+            "image": "https://static.wikia.nocookie.net/plants-vs-brainro-ts/images/4/47/NobbiniBananini.png",
+            "color": "#ffeb3b"
+        },
+        {
+            "name": "Noobini Cactusini",
+            "image": "https://static.wikia.nocookie.net/plants-vs-brainro-ts/images/f/fd/Noob_Cactus.png",
+            "color": "#4caf50"
+        },
+        {
+            "name": "Orangutini Ananassini",
+            "image": "https://static.wikia.nocookie.net/plants-vs-brainro-ts/images/c/ce/Orangutini.png",
+            "color": "#ff9800"
+        },
+        {
+            "name": "Pipi Kiwi",
+            "image": "https://static.wikia.nocookie.net/plants-vs-brainro-ts/images/9/92/Pipi_Kiwi.png",
+            "color": "#8bc34a"
+        },
+        {
+            "name": "Skura Skura",
+            "image": "https://static.wikia.nocookie.net/plants-vs-brainro-ts/images/7/7e/SkuraSkura.png",
+            "color": "#e91e63"
+        },
+        {
+            "name": "Tim Cheese",
+            "image": "https://static.wikia.nocookie.net/plants-vs-brainro-ts/images/1/19/TimCheese.png",
+            "color": "#ffc107"
+        }
+    ],
+    "epic": [
+        {
+            "name": "Alessio",
+            "image": "https://static.wikia.nocookie.net/plants-vs-brainro-ts/images/6/65/Alessio1.png",
+            "color": "#9c27b0"
+        },
+        {
+            "name": "Bambini Crostini",
+            "image": "https://static.wikia.nocookie.net/plants-vs-brainro-ts/images/5/5f/BambiniCrostini.png",
+            "color": "#ff5722"
+        },
+        {
+            "name": "Bandito Bobrito",
+            "image": "https://static.wikia.nocookie.net/plants-vs-brainro-ts/images/6/6c/BanditoBobrito.png",
+            "color": "#795548"
+        },
+        {
+            "name": "Cappuccino Assasino",
+            "image": "https://static.wikia.nocookie.net/plants-vs-brainro-ts/images/5/56/CapuchinoA.png",
+            "color": "#6d4c41"
+        },
+        {
+            "name": "Ballerina Cappuccina",
+            "image": "https://static.wikia.nocookie.net/plants-vs-brainro-ts/images/a/a3/BallerinaCappuccina.png",
+            "color": "#f48fb1"
+        },
+        {
+            "name": "Bananita Dolphinita",
+            "image": "https://static.wikia.nocookie.net/plants-vs-brainro-ts/images/b/b4/BananitaDolphinita.png",
+            "color": "#03a9f4"
+        },
+        {
+            "name": "Burbaloni Luliloli",
+            "image": "https://static.wikia.nocookie.net/plants-vs-brainro-ts/images/f/f2/Burbaloni.png",
+            "color": "#00bcd4"
+        }
+    ],
+    "legendary": [
+        {
+            "name": "Elefanto Cocofanto",
+            "image": "https://static.wikia.nocookie.net/plants-vs-brainro-ts/images/d/d9/Cocofanto.png",
+            "color": "#9e9e9e"
+        },
+        {
+            "name": "Aerilino Armadillo",
+            "image": "https://static.wikia.nocookie.net/plants-vs-brainro-ts/images/f/fa/Aerilino_Armadillo.png",
+            "color": "#607d8b"
+        },
+        {
+            "name": "Pesto Mortioni",
+            "image": "https://static.wikia.nocookie.net/plants-vs-brainro-ts/images/7/74/PestoMortioni.png",
+            "color": "#4caf50"
+        },
+        {
+            "name": "Kiwissimo",
+            "image": "https://static.wikia.nocookie.net/plants-vs-brainro-ts/images/e/ef/Kiwissimo2.png",
+            "color": "#cddc39"
+        },
+        {
+            "name": "Matteo",
+            "image": "https://static.wikia.nocookie.net/plants-vs-brainro-ts/images/4/43/Matteo2.png",
+            "color": "#ff6f00"
+        }
+    ],
+    "mythic": [
+        {
+            "name": "Bangello",
+            "image": "https://static.wikia.nocookie.net/plants-vs-brainro-ts/images/3/3a/Bangello1.png",
+            "color": "#d32f2f"
+        },
+        {
+            "name": "Calculino",
+            "image": "https://static.wikia.nocookie.net/plants-vs-brainro-ts/images/1/1b/Calculino.png",
+            "color": "#1976d2"
+        },
+        {
+            "name": "Castlino Fortini",
+            "image": "https://static.wikia.nocookie.net/plants-vs-brainro-ts/images/4/4f/Castlino_Fortini.png",
+            "color": "#5e35b1"
+        }
+    ]
+}
